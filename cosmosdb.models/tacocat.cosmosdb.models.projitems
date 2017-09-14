@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>{F7EF7279-2AB7-4ED2-B69C-FF3C34D496A9}</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>tacocat.cosmosdb.models</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Taqueria.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Punto.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Taco.cs" />
+  </ItemGroup>
+</Project>

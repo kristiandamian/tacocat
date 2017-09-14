@@ -1,0 +1,27 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tacocat", "tacocat.csproj", "{54F9B18E-94FF-461B-A123-FD5F208EB844}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "tacocat.cosmosdb", "cosmosdb\tacocat.cosmosdb.shproj", "{FD4151EA-34A8-4F3E-A085-47DC15A511D4}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "tacocat.cosmosdb.models", "cosmosdb.models\tacocat.cosmosdb.models.shproj", "{F7EF7279-2AB7-4ED2-B69C-FF3C34D496A9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|iPhoneSimulator = Debug|iPhoneSimulator
+		Release|iPhone = Release|iPhone
+		Release|iPhoneSimulator = Release|iPhoneSimulator
+		Debug|iPhone = Debug|iPhone
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{54F9B18E-94FF-461B-A123-FD5F208EB844}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
+		{54F9B18E-94FF-461B-A123-FD5F208EB844}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
+		{54F9B18E-94FF-461B-A123-FD5F208EB844}.Release|iPhone.ActiveCfg = Release|iPhone
+		{54F9B18E-94FF-461B-A123-FD5F208EB844}.Release|iPhone.Build.0 = Release|iPhone
+		{54F9B18E-94FF-461B-A123-FD5F208EB844}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
+		{54F9B18E-94FF-461B-A123-FD5F208EB844}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
+		{54F9B18E-94FF-461B-A123-FD5F208EB844}.Debug|iPhone.ActiveCfg = Debug|iPhone
+		{54F9B18E-94FF-461B-A123-FD5F208EB844}.Debug|iPhone.Build.0 = Debug|iPhone
+	EndGlobalSection
+EndGlobal
