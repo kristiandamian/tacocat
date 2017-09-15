@@ -14,8 +14,16 @@ namespace tacocat
     [Register ("MapaController")]
     partial class MapaController
     {
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        MapKit.MKMapView mapa { get; set; }
+
         void ReleaseDesignerOutlets ()
         {
+            if (mapa != null) {
+                mapa.Dispose ();
+                mapa = null;
+            }
         }
     }
 }

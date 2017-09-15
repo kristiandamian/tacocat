@@ -7,7 +7,7 @@ namespace tacocat.cosmosdb.models
 {
     public class Taqueria : Resource
     {
-        public string id_Taqueria { get; set; }
+        public int id_Taqueria { get; set; }
         public string Nombre { get; set; }
 		public string Calle { get; set; }
 		public string NumExterior { get; set; }

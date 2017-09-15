@@ -38,5 +38,7 @@
 	<string>Assets.xcassets/AppIcon.appiconset</string>
 	<key>XSLaunchImageAssets</key>
 	<string>Assets.xcassets/LaunchImage.launchimage</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>The app needs to know where&apos;s are to find the best tacos in the town</string>
 </dict>
 </plist>

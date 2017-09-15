@@ -81,13 +81,14 @@
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="Xamarin.iOS" />
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>packages\Newtonsoft.Json.9.0.1\lib\portable-net45+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
-    </Reference>
     <Reference Include="System.IO.Compression" />
     <Reference Include="System.Net.Http" />
     <Reference Include="Microsoft.Azure.DocumentDB.Core">
       <HintPath>packages\Microsoft.Azure.DocumentDB.Core.1.5.0\lib\netstandard1.6\Microsoft.Azure.DocumentDB.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>packages\Newtonsoft.Json.10.0.3\lib\netstandard1.3\Newtonsoft.Json.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -113,6 +114,7 @@
     <Folder Include="Resources\" />
     <Folder Include="Controllers\" />
     <Folder Include="Storyboards\" />
+    <Folder Include="Controllers\MapaHelpers\" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Storyboards\LaunchScreen.storyboard" />
@@ -130,6 +132,13 @@
     <Compile Include="Controllers\MapaController.designer.cs">
       <DependentUpon>MapaController.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controllers\AgregarTaqueriaController.cs" />
+    <Compile Include="Controllers\AgregarTaqueriaController.designer.cs">
+      <DependentUpon>AgregarTaqueriaController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\MapaHelpers\BusquedaMapDelegate.cs" />
+    <Compile Include="Controllers\MapaHelpers\MapaBase.cs" />
+    <Compile Include="Controllers\MapaHelpers\AgregarTaqueriaDelegate.cs" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\TacoCat.png" />
@@ -164,4 +173,5 @@
   <Import Project="cosmosdb.models\tacocat.cosmosdb.models.projitems" Label="Shared" Condition="Exists('cosmosdb.models\tacocat.cosmosdb.models.projitems')" />
   <Import Project="cosmosdb\tacocat.cosmosdb.projitems" Label="Shared" Condition="Exists('cosmosdb\tacocat.cosmosdb.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
+  <Import Project="packages\NETStandard.Library.2.0.0\build\netstandard2.0\NETStandard.Library.targets" Condition="Exists('packages\NETStandard.Library.2.0.0\build\netstandard2.0\NETStandard.Library.targets')" />
 </Project>

@@ -29,15 +29,257 @@
                         <viewControllerLayoutGuide type="bottom" id="1595"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="1598">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="2593" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="0.0" y="64" width="414" height="672"/>
+                            </mapView>
+                        </subviews>
+                        <constraints>
+                            <constraint id="2594" firstItem="2593" firstAttribute="top" secondItem="1598" secondAttribute="top" constant="64"/>
+                            <constraint id="2595" firstItem="2593" firstAttribute="bottom" secondItem="1598" secondAttribute="bottom"/>
+                            <constraint id="2596" firstItem="2593" firstAttribute="trailing" secondItem="1598" secondAttribute="trailingMargin" constant="20"/>
+                            <constraint id="2597" firstItem="1598" firstAttribute="leadingMargin" secondItem="2593" secondAttribute="leading">
+                                <variation key="heightClass=regular-widthClass=compact" constant="20"/>
+                            </constraint>
+                        </constraints>
                     </view>
-                    <navigationItem title="TacoCat" id="1670" key="navigationItem"/>
+                    <navigationItem title="TacoCat" id="1670" key="navigationItem">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="2490">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="2489" translatesAutoresizingMaskIntoConstraints="NO" key="customView">
+                                <rect key="frame" x="0.0" y="0.0" width="30" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="+">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue id="2587" destination="2475" kind="show"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="mapa" destination="2593" id="name-outlet-2593"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1599" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="740" y="29"/>
+        </scene>
+        <scene sceneID="2474">
+            <objects>
+                <viewController id="2475" sceneMemberID="viewController" customClass="AgregarTaqueriaController" storyboardIdentifier="AgregarTaqueriaController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2472"/>
+                        <viewControllerLayoutGuide type="bottom" id="2473"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2476">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="3656" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="-4" y="64" width="383" height="334.5"/>
+                            </mapView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nombre" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="3864" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="16" y="418.5" width="54.5" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15" weight="light"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="4071" translatesAutoresizingMaskIntoConstraints="NO" placeholder="nombre de la taquería">
+                                <rect key="frame" x="79.5" y="413.5" width="279.5" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="4295" translatesAutoresizingMaskIntoConstraints="NO" keyboardDismissMode="onDrag">
+                                <rect key="frame" x="4" y="486" width="406" height="250"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Menu" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="4300" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                        <rect key="frame" x="18" y="8" width="42" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15" weight="light"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" id="4328" translatesAutoresizingMaskIntoConstraints="NO" alignment="leading" fixedFrame="YES">
+                                        <rect key="frame" x="18" y="37" width="288.5" height="90"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" id="4304" translatesAutoresizingMaskIntoConstraints="NO" alignment="center" fixedFrame="YES">
+                                                <rect key="frame" x="0.0" y="0.0" width="288.5" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <subviews>
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="4301" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" placeholder="Nombre">
+                                                        <rect key="frame" x="0.0" y="0.0" width="73" height="30"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="4302" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" placeholder="Descripción del taco">
+                                                        <rect key="frame" x="73" y="0.0" width="153.5" height="30"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="4303" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" placeholder="Precio">
+                                                        <rect key="frame" x="226.5" y="0.0" width="62" height="30"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                                    </textField>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" id="4327" translatesAutoresizingMaskIntoConstraints="NO" alignment="center" fixedFrame="YES">
+                                                <rect key="frame" x="0.0" y="30" width="288.5" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <subviews>
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="4309" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" placeholder="Nombre">
+                                                        <rect key="frame" x="0.0" y="0.0" width="73" height="30"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="4310" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" placeholder="Descripción del taco">
+                                                        <rect key="frame" x="73" y="0.0" width="153.5" height="30"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="4311" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" placeholder="Precio">
+                                                        <rect key="frame" x="226.5" y="0.0" width="62" height="30"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                                    </textField>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" id="4324" translatesAutoresizingMaskIntoConstraints="NO" alignment="center" fixedFrame="YES">
+                                                <rect key="frame" x="0.0" y="60" width="288.5" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <subviews>
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="4313" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" placeholder="Nombre">
+                                                        <rect key="frame" x="0.0" y="0.0" width="73" height="30"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="4314" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" placeholder="Descripción del taco">
+                                                        <rect key="frame" x="73" y="0.0" width="153.5" height="30"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="4315" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" placeholder="Precio">
+                                                        <rect key="frame" x="226.5" y="0.0" width="62" height="30"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                                    </textField>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </stackView>
+                                </subviews>
+                                <variation key="default">
+                                    <mask key="subviews">
+                                        <exclude reference="4300"/>
+                                        <exclude reference="4328"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="subviews">
+                                        <include reference="4300"/>
+                                        <include reference="4328"/>
+                                    </mask>
+                                </variation>
+                            </scrollView>
+                        </subviews>
+                        <constraints>
+                            <constraint id="3859" firstItem="2476" firstAttribute="leadingMargin" secondItem="3656" secondAttribute="leading" constant="20"/>
+                            <constraint id="3860" firstItem="3656" firstAttribute="trailing" secondItem="2476" secondAttribute="trailingMargin" constant="20"/>
+                            <constraint id="3861" firstItem="3656" firstAttribute="top" secondItem="2472" secondAttribute="bottom"/>
+                            <constraint id="3863" firstItem="3656" firstAttribute="height" secondItem="2476" secondAttribute="height" multiplier="0.25" constant="1"/>
+                            <constraint id="4075" firstItem="3864" firstAttribute="top" secondItem="3656" secondAttribute="bottom" constant="20"/>
+                            <constraint id="4076" firstItem="3864" firstAttribute="leading" secondItem="2476" secondAttribute="leadingMargin"/>
+                            <constraint id="4077" firstItem="4071" firstAttribute="top" secondItem="3656" secondAttribute="bottom" constant="15"/>
+                            <constraint id="4078" firstItem="4071" firstAttribute="leading" secondItem="3864" secondAttribute="trailing" constant="9"/>
+                            <constraint id="4079" firstItem="4071" firstAttribute="trailing" secondItem="2476" secondAttribute="trailingMargin"/>
+                            <constraint id="4296" firstItem="4295" firstAttribute="top" secondItem="4071" secondAttribute="bottom" constant="8"/>
+                            <constraint id="4297" firstItem="2476" firstAttribute="leadingMargin" secondItem="4295" secondAttribute="leading" constant="16"/>
+                            <constraint id="4298" firstItem="4295" firstAttribute="trailing" secondItem="2476" secondAttribute="trailingMargin" constant="16"/>
+                            <constraint id="4299" firstItem="4295" firstAttribute="bottom" secondItem="2476" secondAttribute="bottom"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="3864"/>
+                                <exclude reference="4071"/>
+                                <exclude reference="4295"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="4075"/>
+                                <exclude reference="4076"/>
+                                <exclude reference="4077"/>
+                                <exclude reference="4078"/>
+                                <exclude reference="4079"/>
+                                <exclude reference="4296"/>
+                                <exclude reference="4297"/>
+                                <exclude reference="4298"/>
+                                <exclude reference="4299"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="3864"/>
+                                <include reference="4071"/>
+                                <include reference="4295"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="4075"/>
+                                <include reference="4076"/>
+                                <include reference="4077"/>
+                                <include reference="4078"/>
+                                <include reference="4079"/>
+                                <include reference="4296"/>
+                                <include reference="4297"/>
+                                <include reference="4298"/>
+                                <include reference="4299"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem id="2488" key="navigationItem" title="Nueva taquería">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="4571">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="4570" translatesAutoresizingMaskIntoConstraints="NO" key="customView">
+                                <rect key="frame" x="0.0" y="0.0" width="56" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Guardar">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="txtNombre" destination="4071" id="name-outlet-4071"/>
+                        <outlet property="txtNombre1" destination="4301" id="name-outlet-4301"/>
+                        <outlet property="txtNombre2" destination="4309" id="name-outlet-4309"/>
+                        <outlet property="txtNombre3" destination="4313" id="name-outlet-4313"/>
+                        <outlet property="txtDescripcion1" destination="4302" id="name-outlet-4302"/>
+                        <outlet property="txtDescripcion2" destination="4310" id="name-outlet-4310"/>
+                        <outlet property="txtDescripcion3" destination="4314" id="name-outlet-4314"/>
+                        <outlet property="txtPrecio1" destination="4303" id="name-outlet-4303"/>
+                        <outlet property="txtPrecio2" destination="4311" id="name-outlet-4311"/>
+                        <outlet property="txtPrecio3" destination="4315" id="name-outlet-4315"/>
+                        <outlet property="mapa" destination="3656" id="name-outlet-3656"/>
+                        <outlet property="stackConstraintBottom" destination="4299" id="name-outlet-4299"/>
+                        <outlet property="MapaSizeConstraint" destination="3863" id="name-outlet-3863"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2477" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1390" y="26"/>
         </scene>
     </scenes>
     <resources>

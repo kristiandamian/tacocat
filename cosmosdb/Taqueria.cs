@@ -62,5 +62,20 @@ namespace tacocat.cosmosdb
 			}
 			return docs.ToList<models.Taqueria>();
         }
-	}
+
+        public static async Task InsertoTaqueria(models.Taqueria taqueria)
+        {
+			try
+			{
+                DocumentClient client = Config.conexion();
+				collectionLink = Config.GenerarURI();
+				await client.CreateDocumentAsync(collectionLink, taqueria);
+			}
+			catch (DocumentClientException de)
+			{   
+			    Console.WriteLine(de.Message);	
+				throw;
+			}
+        }
+    }
 }
