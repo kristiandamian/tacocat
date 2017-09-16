@@ -258,6 +258,9 @@
                                 <state key="normal" title="Guardar">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="btnGuardarTouch:" destination="2475" id="4850" eventType="touchUpInside"/>
+                                </connections>
                             </button>
                         </barButtonItem>
                     </navigationItem>
@@ -275,6 +278,7 @@
                         <outlet property="mapa" destination="3656" id="name-outlet-3656"/>
                         <outlet property="stackConstraintBottom" destination="4299" id="name-outlet-4299"/>
                         <outlet property="MapaSizeConstraint" destination="3863" id="name-outlet-3863"/>
+                        <outlet property="btnGuardar" destination="4570" id="name-outlet-4570"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2477" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -6,8 +6,8 @@ namespace tacocat.cosmosdb
 {
     public class Config : Resource
     {
-        public static readonly string PrimaryKey = "==";
-		public static readonly string SecondaryKey = "==";
+        public static readonly string PrimaryKey = "";
+        public static readonly string SecondaryKey = "";
 		public static readonly string EndpointUri = "";
 		public static readonly string DatabaseName = "";
 		public static readonly string CollectionName = "";

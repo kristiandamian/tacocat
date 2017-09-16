@@ -39,7 +39,7 @@ namespace tacocat
 			mapDel.RegionChangedEvent += MapDel_RegionChangedEvent;
 			map.Delegate = mapDel;
 
-			//BusquedaTaquerias();
+			this.BusquedaTaquerias();
         }
 
         void LimpiarMarkers()
@@ -55,42 +55,44 @@ namespace tacocat
 
 		void MapDel_RegionChangedEvent(object sender, EventArgs e)
 		{
-			//this.BusquedaTaquerias();
+			this.BusquedaTaquerias();
 		}
 
 		async void BusquedaTaquerias()
 		{
-			var izqSuperior = new CLLocationCoordinate2D(map.CenterCoordinate.Latitude + map.Region.Span.LatitudeDelta / 2, map.CenterCoordinate.Longitude - map.Region.Span.LongitudeDelta / 2);
-			var derSuperior = new CLLocationCoordinate2D(map.CenterCoordinate.Latitude + map.Region.Span.LatitudeDelta / 2, map.CenterCoordinate.Longitude + map.Region.Span.LongitudeDelta / 2);
-			var izqInferior = new CLLocationCoordinate2D(map.CenterCoordinate.Latitude - map.Region.Span.LatitudeDelta / 2, map.CenterCoordinate.Longitude + map.Region.Span.LongitudeDelta / 2);
-			var derInferior = new CLLocationCoordinate2D(map.CenterCoordinate.Latitude - map.Region.Span.LatitudeDelta / 2, map.CenterCoordinate.Longitude - map.Region.Span.LongitudeDelta / 2);
+            try
+            {
+                var izqSuperior = new CLLocationCoordinate2D(map.CenterCoordinate.Latitude + map.Region.Span.LatitudeDelta / 2, map.CenterCoordinate.Longitude - map.Region.Span.LongitudeDelta / 2);
+                var derSuperior = new CLLocationCoordinate2D(map.CenterCoordinate.Latitude + map.Region.Span.LatitudeDelta / 2, map.CenterCoordinate.Longitude + map.Region.Span.LongitudeDelta / 2);
+                var izqInferior = new CLLocationCoordinate2D(map.CenterCoordinate.Latitude - map.Region.Span.LatitudeDelta / 2, map.CenterCoordinate.Longitude + map.Region.Span.LongitudeDelta / 2);
+                var derInferior = new CLLocationCoordinate2D(map.CenterCoordinate.Latitude - map.Region.Span.LatitudeDelta / 2, map.CenterCoordinate.Longitude - map.Region.Span.LongitudeDelta / 2);
 
-			var puntos = new List<Punto>();
-			puntos.Add(new Punto() { Latitud = izqSuperior.Latitude, Longitud = izqSuperior.Longitude });
-			puntos.Add(new Punto() { Latitud = derSuperior.Latitude, Longitud = derSuperior.Longitude });
-			puntos.Add(new Punto() { Latitud = izqInferior.Latitude, Longitud = izqInferior.Longitude });
-			puntos.Add(new Punto() { Latitud = derInferior.Latitude, Longitud = derInferior.Longitude });// Se debe cerrar el poligono
+                var puntos = new List<Punto>();
+                puntos.Add(new Punto() { Latitud = izqSuperior.Latitude, Longitud = izqSuperior.Longitude });
+                puntos.Add(new Punto() { Latitud = derSuperior.Latitude, Longitud = derSuperior.Longitude });
+                puntos.Add(new Punto() { Latitud = izqInferior.Latitude, Longitud = izqInferior.Longitude });
+                puntos.Add(new Punto() { Latitud = derInferior.Latitude, Longitud = derInferior.Longitude });// Se debe cerrar el poligono
 
-			try
-			{
-				taquerias = await Task.Run(() => cosmosdb.Taqueria.BuscarTaqueriasAsync(puntos, ciudad, pais));
-			}
+
+                taquerias = await Task.Run(() => cosmosdb.Taqueria.BuscarTaqueriasAsync(puntos, ciudad, pais));
+
+                LimpiarMarkers();
+
+                foreach (var tac in taquerias)
+                {
+
+                    int id = -1;
+                    int.TryParse(tac.Id, out id);
+                    AgregarMarker(new CLLocationCoordinate2D()
+                    {
+                        Latitude = tac.Punto.Position.Latitude,
+                        Longitude = tac.Punto.Position.Longitude
+                    }, tac.Nombre, $"{tac.Calle} {tac.NumExterior} {tac.Colonia}", id);
+                }
+            }
 			catch (Exception ex)
 			{
 				Console.WriteLine(ex.Message);
-			}
-			LimpiarMarkers();
-
-			foreach (var tac in taquerias)
-			{
-				
-				int id = -1;
-				int.TryParse(tac.Id, out id);
-				AgregarMarker(new CLLocationCoordinate2D()
-				{
-					Latitude = tac.Punto.Position.Latitude,
-					Longitude = tac.Punto.Position.Longitude
-                }, tac.Nombre, $"{tac.Calle} {tac.NumExterior} {tac.Colonia}", id);
 			}
 		}
     }

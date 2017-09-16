@@ -25,9 +25,8 @@ namespace tacocat.cosmosdb
 			FeedResponse<models.Taqueria> docs = new FeedResponse<models.Taqueria>();
 			DocumentClient client = Config.conexion();
 			collectionLink = Config.GenerarURI();
-            pais = pais.RemoveAccentsWithRegEx();
-
-            var particion = $"{pais.ToUpper()}{ciudad.ToUpper()}";
+           var particion = $"{pais.ToUpper()}{ciudad.ToUpper()}";
+            particion = particion.RemoveAccentsWithRegEx();
 			try
 			{
 				if (puntos.Count == 4)
@@ -46,9 +45,7 @@ namespace tacocat.cosmosdb
 					{
 						PartitionKey = new PartitionKey(particion)
 					})
-									.Where(d => d.Ciudad.ToUpper() == ciudad.ToUpper() &&
-												d.Pais.ToUpper() == pais.ToUpper() &&
-												d.Punto.Within(poligono))
+									.Where(d => d.Punto.Within(poligono))
 
 									.AsDocumentQuery();
 
@@ -69,6 +66,7 @@ namespace tacocat.cosmosdb
 			{
                 DocumentClient client = Config.conexion();
 				collectionLink = Config.GenerarURI();
+                taqueria.Particion=taqueria.Particion.RemoveAccentsWithRegEx();
 				await client.CreateDocumentAsync(collectionLink, taqueria);
 			}
 			catch (DocumentClientException de)

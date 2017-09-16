@@ -18,6 +18,7 @@ namespace tacocat.cosmosdb.models
         public string Ciudad { get; set; }
 		public string Estado { get; set; }
 		public string Pais { get; set; }
+        public string Particion{ get; set; }
         public Point Punto { get; set; }
         public List<Taco> Menu { get; set; }
     }

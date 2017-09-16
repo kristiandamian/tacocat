@@ -16,6 +16,10 @@ namespace tacocat
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton btnGuardar { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         MapKit.MKMapView mapa { get; set; }
 
         [Outlet]
@@ -66,8 +70,17 @@ namespace tacocat
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UITextField txtPrecio3 { get; set; }
 
+        [Action ("btnGuardarTouch:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void btnGuardarTouch (UIKit.UIButton sender);
+
         void ReleaseDesignerOutlets ()
         {
+            if (btnGuardar != null) {
+                btnGuardar.Dispose ();
+                btnGuardar = null;
+            }
+
             if (mapa != null) {
                 mapa.Dispose ();
                 mapa = null;
